@@ -246,7 +246,7 @@ type Binlog struct {
 var defaultConf = Config{
 	Host:             "0.0.0.0",
 	AdvertiseAddress: "",
-	Port:             4000,
+	Port:             4001,
 	Store:            "mocktikv",
 	Path:             "/tmp/tidb",
 	RunDDL:           true,

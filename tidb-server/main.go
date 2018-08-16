@@ -90,7 +90,7 @@ var (
 	storePath        = flag.String(nmStorePath, "/tmp/tidb", "tidb storage path")
 	host             = flag.String(nmHost, "0.0.0.0", "tidb server host")
 	advertiseAddress = flag.String(nmAdvertiseAddress, "", "tidb server advertise IP")
-	port             = flag.String(nmPort, "4000", "tidb server port")
+	port             = flag.String(nmPort, "4008", "tidb server port")
 	socket           = flag.String(nmSocket, "", "The socket file to use for connection.")
 	binlogSocket     = flag.String(nmBinlogSocket, "", "socket file to write binlog")
 	runDDL           = flagBoolean(nmRunDDL, true, "run ddl worker on this tidb-server")
@@ -140,6 +140,7 @@ func main() {
 	setupBinlogClient()
 	setupMetrics()
 	createStoreAndDomain()
+
 	createServer()
 	setupSignalHandler()
 	runServer()
